@@ -13,6 +13,7 @@ module.exports = {
     'curly': [ 'error', 'multi-line' ],
     'array-bracket-spacing': [ 'error', 'always' ],
     'space-before-function-paren': [ 'error', 'always' ],
-    'radix': [ 'error', 'as-needed' ]
+    'radix': [ 'error', 'as-needed' ],
+    'react/react-in-jsx-scope': 'off',
   }
 };
