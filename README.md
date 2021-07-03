@@ -4,6 +4,7 @@
 
 - Clone this repository: `git clone git@github.com:rafaelsevla/fliper-card.git`
 - Install dependencies: `npm install`
+- Run `echo "REACT_APP_ADMIN_SECRET=<your admin secret>" > .env.local` to create env enviroment
 - Run `npm start` to develop on `http://localhost:3000`
 
 ## Scripts
