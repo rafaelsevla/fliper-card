@@ -11,4 +11,4 @@ export const ALL_WEALTH_SUMARY = gql`
       profitability
     }
   }
-`
+`;

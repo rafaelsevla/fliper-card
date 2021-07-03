@@ -40,7 +40,7 @@ export default function Card () {
       </Footer>
 
     </Container>
-  )
+  );
 }
 
 const Container = styled.div`
@@ -68,14 +68,14 @@ const InvestedAmountContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Text = styled.span`
   font-size: 14px;
   color: #606377;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-`
+`;
 
 const TextAmountValue = styled.span`
   font-size: 22px;
@@ -85,19 +85,19 @@ const TextAmountValue = styled.span`
   font-weight: 800;
   margin-top: 10px;
   margin-bottom: 20px;
-`
+`;
 
 const TextItemValue = styled(TextAmountValue)`
   font-size: 16px;
   margin-top: 0;
   margin-bottom: 0;
-`
+`;
 
 const ItemDetailContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-`
+`;
 
 const Footer = styled.div`
   border-top: 2px solid #f1f1f1;
@@ -105,7 +105,7 @@ const Footer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-top: 20px;
-`
+`;
 
 const Button = styled.button`
 	cursor: pointer;
@@ -126,4 +126,4 @@ const Button = styled.button`
   &:active {
     background: #f0f0f0;
   }
-`
+`;

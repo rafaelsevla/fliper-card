@@ -10,4 +10,4 @@ export default createGlobalStyle`
     min-height: 100vh;
     background-color: #E8EBF6;
   }
-`
+`;
