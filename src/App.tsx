@@ -1,19 +1,25 @@
-import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ALL_WEALTH_SUMARY } from 'queries';
+import styled from 'styled-components';
+
+import { Card } from 'ui';
+import { ALL_WEALTH_SUMARY } from 'service/queries';
 
 
 function App () {
-  const { loading, error, data } = useQuery(ALL_WEALTH_SUMARY, {
-    variables: { limit: 10 },
-  });
+  const { loading, error, data } = useQuery(ALL_WEALTH_SUMARY);
 
   return (
-    <div>
+    <RootContainer>
       {console.log(loading, error, data)}
-      hello world
-    </div>
+      <Card />
+    </RootContainer>
   );
 }
 
 export default App;
+
+const RootContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+`

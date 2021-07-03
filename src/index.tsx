@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 
-import client from 'api-client';
+import client from 'service/api-client';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import GlobalStyle from './global-style';
