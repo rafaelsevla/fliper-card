@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { ReactComponent as DotsOptions } from './assets/dots-options.svg';
+
+import { EllipsisDropdownSocialNetworkShare } from 'ui';
 
 export default function Card () {
   return (
@@ -10,7 +11,9 @@ export default function Card () {
           Seu resumo
         </HeaderTitle>
 
-        <DotsOptions />
+        <EllipsisDropdownSocialNetworkShare
+          messageToShare='Veja isso!!'
+        />
       </Header>
 
       <InvestedAmountContainer>
@@ -36,7 +39,9 @@ export default function Card () {
       </>
 
       <Footer>
-        <Button>Ver mais</Button>
+        <ButtonLink href='https://fliper.app/' target='_blank'>
+          Ver mais
+        </ButtonLink>
       </Footer>
 
     </Container>
@@ -107,23 +112,25 @@ const Footer = styled.div`
   padding-top: 20px;
 `;
 
-const Button = styled.button`
+const ButtonLink = styled.a`
 	cursor: pointer;
 	outline: inherit;
   font-family: 'Montserrat';
   font-weight: 700;
   color: #3B5CB8;
-  border: 1px solid #3B5CB8;
+  border: 1px solid #afb0b6;
   font-size: 16px;
   padding: 7px 13px;
   background-color: #FFF;
   border-radius: 25px;
   box-shadow: 1px 1px #9aa3bc;
+  text-decoration: none;
   &:hover {
     color: #fff;
     background-color: #3B5CB8;
   }
   &:active {
-    background: #f0f0f0;
+    background-color: #cecece;
+    color: #3B5CB8;
   }
 `;
