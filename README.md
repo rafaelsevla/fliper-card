@@ -9,3 +9,5 @@
 ## Scripts
 
 - `npm start`: Starts the application
+- `npm lint`: Check pattern on code
+- `npm tsc`: Check typescript errors on code
