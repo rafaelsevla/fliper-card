@@ -94,12 +94,7 @@ const DropdownItem = styled.a`
   color: #606377;
 `;
 
-const DropdownCloser = styled.div.attrs({
-  id: "firstname",
-  name: "firstname", 
-  placeholder: "Your first name..",
-  type: 'text'
-})`
+const DropdownCloser = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;

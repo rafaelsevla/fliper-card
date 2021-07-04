@@ -72,7 +72,7 @@ Card.defaultProps = {
 
 const Container = styled.div`
   background-color: #fff;
-  width: 330px;
+  width: 300px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 1px 1px #9aa3bc;

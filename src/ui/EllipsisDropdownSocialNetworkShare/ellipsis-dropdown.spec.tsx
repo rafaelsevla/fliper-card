@@ -1,11 +1,11 @@
 import EllipsisDropdownSocialNetworkShare from './EllipsisDropdownSocialNetworkShare';
-import '@testing-library/jest-dom'
-import { screen, render } from '@testing-library/react'
+import '@testing-library/jest-dom';
+import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 const shareOnTwitterText = 'Compartilhe no twitter';
 const shareOnWhatsappText = 'Compartilhe no whatsapp';
-const messageToShare = 'Veja isso!'
+const messageToShare = 'Veja isso!';
 
 describe('Dropdown', () => {
   it('should start closed', () => {
@@ -15,7 +15,7 @@ describe('Dropdown', () => {
     expect(screen.queryByText(shareOnWhatsappText)).not.toBeInTheDocument();
   });
 
-  
+
   it('should show options when open', () => {
     render(<EllipsisDropdownSocialNetworkShare messageToShare={messageToShare}/>);
 
@@ -36,10 +36,10 @@ describe('Dropdown', () => {
     const dropdownButton = screen.getByRole('button');
 
     userEvent.click(dropdownButton);
-    
+
     expect(screen.getByText(shareOnTwitterText)).toBeInTheDocument();
     expect(screen.getByText(shareOnWhatsappText)).toBeInTheDocument();
-    
+
     userEvent.click(dropdownButton);
 
     expect(screen.queryByText(shareOnTwitterText)).not.toBeInTheDocument();
@@ -51,10 +51,10 @@ describe('Dropdown', () => {
 
     const dropdownButton = screen.getByRole('button');
     userEvent.click(dropdownButton);
-    
+
     expect(screen.getByText(shareOnTwitterText)).toBeInTheDocument();
     expect(screen.getByText(shareOnWhatsappText)).toBeInTheDocument();
-    
+
     const closerDropdown = screen.getByTestId('ellipsis-dropdown-closer');
     userEvent.click(closerDropdown);
 
@@ -63,4 +63,4 @@ describe('Dropdown', () => {
   });
 
 
-})
+});
