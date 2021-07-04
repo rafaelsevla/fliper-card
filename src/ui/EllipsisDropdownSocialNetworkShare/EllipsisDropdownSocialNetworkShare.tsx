@@ -52,7 +52,7 @@ export default function EllipsisDropdownSocialNetworkShare ({ messageToShare }: 
           </Dropdown>
         )}
       </Container>
-      {isOpen && <DropdownCloser onClick={() => setIsOpen(false)} />}
+      {isOpen && <DropdownCloser data-testid='ellipsis-dropdown-closer' onClick={() => setIsOpen(false)} />}
     </>
   );
 }
@@ -94,7 +94,12 @@ const DropdownItem = styled.a`
   color: #606377;
 `;
 
-const DropdownCloser = styled.div`
+const DropdownCloser = styled.div.attrs({
+  id: "firstname",
+  name: "firstname", 
+  placeholder: "Your first name..",
+  type: 'text'
+})`
   width: 100vw;
   height: 100vh;
   position: absolute;

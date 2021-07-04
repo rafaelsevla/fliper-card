@@ -1,4 +1,4 @@
-# [Fliper Card!](https://github.com/rafaelsevla/fliper-card)
+# [Fliper Card!](https://fliper-card.netlify.app/)
 
 ## Up and running
 
@@ -10,5 +10,6 @@
 ## Scripts
 
 - `npm start`: Starts the application
-- `npm lint`: Check pattern on code
-- `npm tsc`: Check typescript errors on code
+- `npm run lint`: Check pattern on code
+- `npm run tsc`: Check typescript errors on code
+- `npm run test`: Run tests
