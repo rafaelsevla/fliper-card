@@ -17,38 +17,39 @@ export default function EllipsisDropdownSocialNetworkShare ({ messageToShare }: 
   const [ isOpen, setIsOpen ] = useState<boolean>(false);
 
   return (
-    <Container>
-      <Button onClick={() => setIsOpen((open) => !open)}>
-        <IconEllipsis />
-      </Button>
-      {isOpen && (
-        <Dropdown role='menu'>
-          {networkLinks.map((option) => (
-            <DropdownItemContainer>
-              <DropdownItem
+    <>
+      <Container>
+        <Button onClick={() => setIsOpen((open) => !open)}>
+          <IconEllipsis />
+        </Button>
+        {isOpen && (
+          <Dropdown role='menu'>
+            {networkLinks.map((option) => (
+              <DropdownItemContainer
                 key={option.id}
-                href={interpolateString(
-                  option.uri,
-                  'concatitem',
-                  messageToShare
-                )}
-                target='_blank'
               >
-                {option.label}
-              </DropdownItem>
-            </DropdownItemContainer>
-          ))}
-        </Dropdown>
-      )}
-  </Container>
+                <DropdownItem
+                  href={interpolateString(
+                    option.uri,
+                    'concatitem',
+                    messageToShare
+                  )}
+                  target='_blank'
+                >
+                  {option.label}
+                </DropdownItem>
+              </DropdownItemContainer>
+            ))}
+          </Dropdown>
+        )}
+      </Container>
+      {isOpen && <DropdownCloser onClick={() => setIsOpen(false)} />}
+    </>
   )
 }
 
 const Container = styled.div`
  position: relative;
-  svg {
-    cursor: pointer;
-  }
 `
 
 const Button = styled.button`
@@ -58,6 +59,7 @@ const Button = styled.button`
   padding-left: 0;
   margin-right: 0;
   padding-right: 0;
+  cursor: pointer;
 `
 
 const Dropdown = styled.div`
@@ -82,4 +84,14 @@ const DropdownItem = styled.a`
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  color: #606377;
+`
+
+const DropdownCloser = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `
