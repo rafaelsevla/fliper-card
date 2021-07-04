@@ -124,7 +124,7 @@ const Footer = styled.div`
 `;
 
 const ButtonLink = styled.a`
-	outline: inherit;
+  outline: inherit;
   font-weight: 700;
   border: 1px solid #afb0b6;
   font-size: 16px;
