@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { EllipsisDropdownSocialNetworkShare } from 'ui';
 import { WealthProps } from 'utils/wealth';
+import { valuesFormater } from 'utils/format-values';
 
 interface Props extends WealthProps {
   loading: boolean
@@ -35,23 +36,23 @@ export default function Card ({
 
       <InvestedAmountContainer>
         <Text>Valor investido</Text>
-        <TextAmountValue>{displayLoadingOrValue(loading, total)}</TextAmountValue>
+        <TextAmountValue>{displayLoadingOrValue(loading, valuesFormater('money', total))}</TextAmountValue>
       </InvestedAmountContainer>
 
       <>
         <ItemDetailContainer>
           <Text>Rentabilidade/mês</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, profitability)}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('percent', profitability))}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>CDI</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, cdi)}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('percent', cdi))}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>Ganho/mês</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, gain)}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('money', gain))}</TextItemValue>
         </ItemDetailContainer>
       </>
 
@@ -162,8 +163,8 @@ const DotsLoadingAnimation = styled.div`
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #9880ff;
-  color: #9880ff;
+  background-color: #3B5CB8;
+  color: #3B5CB8;
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
 
@@ -179,8 +180,8 @@ const DotsLoadingAnimation = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
+    background-color: #3B5CB8;
+    color: #3B5CB8;
     animation: dotFlashing 1s infinite alternate;
     animation-delay: 0s;
   }
@@ -190,15 +191,15 @@ const DotsLoadingAnimation = styled.div`
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
+    background-color: #3B5CB8;
+    color: #3B5CB8;
     animation: dotFlashing 1s infinite alternate;
     animation-delay: 1s;
   }
 
   @keyframes dotFlashing {
     0% {
-      background-color: #9880ff;
+      background-color: #3B5CB8;
     }
     50%,
     100% {
