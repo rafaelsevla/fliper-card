@@ -14,7 +14,6 @@ function App () {
 
   return (
     <RootContainer>
-      {console.log(loading, error, data)}
       {loading && (
         <Card
           id={-1}
@@ -31,14 +30,15 @@ function App () {
       )}
       
       {data && data.wealthSummary.map((wealth) => (
-        <Card
-          key={wealth.id}
-          id={wealth.id}
-          gain={wealth.gain}
-          cdi={wealth.cdi}
-          profitability={wealth.profitability}
-          total={wealth.total}
-        />
+        <ItemContainer key={wealth.id}>
+          <Card
+            id={wealth.id}
+            gain={wealth.gain}
+            cdi={wealth.cdi}
+            profitability={wealth.profitability}
+            total={wealth.total}
+          />
+        </ItemContainer>
       ))}
 
     </RootContainer>
@@ -51,4 +51,10 @@ const RootContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
+
+const ItemContainer = styled.div`
+  margin: 20px;
+`
