@@ -6,7 +6,7 @@ import { valuesFormater } from 'utils/format-values';
 
 interface Props extends WealthProps {
   loading: boolean
-};
+}
 
 export default function Card ({
   cdi,
@@ -16,7 +16,7 @@ export default function Card ({
   loading
 }: Props) {
 
-  function displayLoadingOrValue (loading: boolean, value: any) {
+  function displayLoadingOrValue (value: any) {
     if (loading) return <DotsLoadingAnimation />;
     return value;
   }
@@ -36,23 +36,23 @@ export default function Card ({
 
       <InvestedAmountContainer>
         <Text>Valor investido</Text>
-        <TextAmountValue>{displayLoadingOrValue(loading, valuesFormater('money', total))}</TextAmountValue>
+        <TextAmountValue>{displayLoadingOrValue(valuesFormater('money', total))}</TextAmountValue>
       </InvestedAmountContainer>
 
       <>
         <ItemDetailContainer>
           <Text>Rentabilidade/mês</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('percent', profitability))}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(valuesFormater('percent', profitability))}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>CDI</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('percent', cdi))}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(valuesFormater('percent', cdi))}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>Ganho/mês</Text>
-          <TextItemValue>{displayLoadingOrValue(loading, valuesFormater('money', gain))}</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(valuesFormater('money', gain))}</TextItemValue>
         </ItemDetailContainer>
       </>
 
@@ -68,7 +68,7 @@ export default function Card ({
 
 Card.defaultProps = {
   loading: false
-}
+};
 
 const Container = styled.div`
   background-color: #fff;
@@ -84,9 +84,7 @@ const Header = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  color: #3B5CB8;
   font-size: 21px;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
 `;
 
@@ -100,25 +98,15 @@ const InvestedAmountContainer = styled.div`
 const Text = styled.span`
   font-size: 14px;
   color: #606377;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
 `;
 
 const TextAmountValue = styled.span`
   font-size: 22px;
   font-weight: bold;
-  color: #3B5CB8;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   margin-top: 10px;
   margin-bottom: 20px;
-`;
-
-const TextItemValue = styled(TextAmountValue)`
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 10px
 `;
 
 const ItemDetailContainer = styled.div`
@@ -136,18 +124,14 @@ const Footer = styled.div`
 `;
 
 const ButtonLink = styled.a`
-	cursor: pointer;
 	outline: inherit;
-  font-family: 'Montserrat';
   font-weight: 700;
-  color: #3B5CB8;
   border: 1px solid #afb0b6;
   font-size: 16px;
   padding: 7px 13px;
   background-color: #FFF;
   border-radius: 25px;
   box-shadow: 1px 1px #9aa3bc;
-  text-decoration: none;
   &:hover {
     color: #fff;
     background-color: #3B5CB8;
@@ -164,7 +148,6 @@ const DotsLoadingAnimation = styled.div`
   height: 10px;
   border-radius: 5px;
   background-color: #3B5CB8;
-  color: #3B5CB8;
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
 
@@ -206,4 +189,11 @@ const DotsLoadingAnimation = styled.div`
       background-color: #ebe6ff;
     }
   }
-`
+`;
+
+const TextItemValue = styled(TextAmountValue)`
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px
+`;

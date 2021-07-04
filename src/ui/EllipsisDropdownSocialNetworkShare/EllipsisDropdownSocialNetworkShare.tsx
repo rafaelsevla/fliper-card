@@ -11,7 +11,7 @@ interface Props {
 const networkLinks = [
   { id: -1, label: 'Compartilhe no twitter', uri: 'https://twitter.com/intent/tweet?text=<concatitem>' },
   { id: -2, label: 'Compartilhe no whatsapp', uri: 'https://web.whatsapp.com/send?text=<concatitem>' }
-]
+];
 
 export default function EllipsisDropdownSocialNetworkShare ({ messageToShare }: Props) {
   const [ isOpen, setIsOpen ] = useState<boolean>(false);
@@ -45,12 +45,12 @@ export default function EllipsisDropdownSocialNetworkShare ({ messageToShare }: 
       </Container>
       {isOpen && <DropdownCloser onClick={() => setIsOpen(false)} />}
     </>
-  )
+  );
 }
 
 const Container = styled.div`
  position: relative;
-`
+`;
 
 const Button = styled.button`
   background: transparent;
@@ -60,7 +60,7 @@ const Button = styled.button`
   margin-right: 0;
   padding-right: 0;
   cursor: pointer;
-`
+`;
 
 const Dropdown = styled.div`
   position: absolute;
@@ -72,20 +72,18 @@ const Dropdown = styled.div`
   border-radius: 7px;
   min-width: 100px;
   z-index: 50;
-`
+`;
 
 const DropdownItemContainer = styled.div`
   text-align:center;
   padding:  5px 10px;
-`
+`;
 
 const DropdownItem = styled.a`
-  text-decoration: none;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #606377;
-`
+`;
 
 const DropdownCloser = styled.div`
   width: 100vw;
@@ -94,4 +92,4 @@ const DropdownCloser = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
-`
+`;

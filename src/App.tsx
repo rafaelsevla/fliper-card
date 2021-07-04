@@ -15,20 +15,22 @@ function App () {
   return (
     <RootContainer>
       {loading && (
-        <Card
-          id={-1}
-          loading
-          cdi={0}
-          gain={0}
-          profitability={0}
-          total={0}
-        />
+        <ItemContainer>
+          <Card
+            id={-1}
+            loading
+            cdi={0}
+            gain={0}
+            profitability={0}
+            total={0}
+          />
+        </ItemContainer>
       )}
-      
+
       {error && (
         <span>Infelizmente um erro aconteceu :(</span>
       )}
-      
+
       {data && data.wealthSummary.map((wealth) => (
         <ItemContainer key={wealth.id}>
           <Card
@@ -57,4 +59,4 @@ const RootContainer = styled.div`
 
 const ItemContainer = styled.div`
   margin: 20px;
-`
+`;
