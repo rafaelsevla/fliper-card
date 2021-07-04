@@ -1,8 +1,25 @@
 import styled from 'styled-components';
 
 import { EllipsisDropdownSocialNetworkShare } from 'ui';
+import { WealthProps } from 'utils/wealth';
 
-export default function Card () {
+interface Props extends WealthProps {
+  loading: boolean
+};
+
+export default function Card ({
+  cdi,
+  total,
+  profitability,
+  gain,
+  loading
+}: Props) {
+
+  function displayLoadingOrValue (loading: boolean, value: any) {
+    if (loading) return <DotsLoadingAnimation />;
+    return value;
+  }
+
   return (
     <Container>
 
@@ -18,23 +35,23 @@ export default function Card () {
 
       <InvestedAmountContainer>
         <Text>Valor investido</Text>
-        <TextAmountValue>R$ 3.200.876,00</TextAmountValue>
+        <TextAmountValue>{displayLoadingOrValue(loading, total)}</TextAmountValue>
       </InvestedAmountContainer>
 
       <>
         <ItemDetailContainer>
           <Text>Rentabilidade/mês</Text>
-          <TextItemValue>2,767%</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, profitability)}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>CDI</Text>
-          <TextItemValue>3,45%</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, cdi)}</TextItemValue>
         </ItemDetailContainer>
 
         <ItemDetailContainer>
           <Text>Ganho/mês</Text>
-          <TextItemValue>R$2182,22</TextItemValue>
+          <TextItemValue>{displayLoadingOrValue(loading, gain)}</TextItemValue>
         </ItemDetailContainer>
       </>
 
@@ -46,6 +63,10 @@ export default function Card () {
 
     </Container>
   );
+}
+
+Card.defaultProps = {
+  loading: false
 }
 
 const Container = styled.div`
@@ -96,6 +117,7 @@ const TextItemValue = styled(TextAmountValue)`
   font-size: 16px;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 10px
 `;
 
 const ItemDetailContainer = styled.div`
@@ -134,3 +156,53 @@ const ButtonLink = styled.a`
     color: #3B5CB8;
   }
 `;
+
+const DotsLoadingAnimation = styled.div`
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+
+  &:before, &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+  }
+
+  &:after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #9880ff;
+    color: #9880ff;
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+  }
+
+  @keyframes dotFlashing {
+    0% {
+      background-color: #9880ff;
+    }
+    50%,
+    100% {
+      background-color: #ebe6ff;
+    }
+  }
+`
