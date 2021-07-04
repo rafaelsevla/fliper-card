@@ -13,3 +13,7 @@
 - `npm run lint`: Check pattern on code
 - `npm run tsc`: Check typescript errors on code
 - `npm run test`: Run tests
+
+## Site
+
+- [Click here!](https://fliper-card.netlify.app/)
