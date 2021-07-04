@@ -1,16 +1,25 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import interpolateString from 'utils/interpolate-string';
 import { ReactComponent as IconEllipsis } from './assets/icon-ellipsis.svg';
+import interpolateString from 'utils/interpolate-string';
+import deviceIsMobile from 'utils/device-is-mobile';
 
 interface Props {
   messageToShare: string;
 }
 
 const networkLinks = [
-  { id: -1, label: 'Compartilhe no twitter', uri: 'https://twitter.com/intent/tweet?text=<concatitem>' },
-  { id: -2, label: 'Compartilhe no whatsapp', uri: 'https://web.whatsapp.com/send?text=<concatitem>' }
+  {
+    id: -1,
+    label: 'Compartilhe no twitter',
+    uri: 'https://twitter.com/intent/tweet?text=<concatitem>'
+  },
+  {
+    id: -2,
+    label: 'Compartilhe no whatsapp',
+    uri: deviceIsMobile() ? 'whatsapp://send?text=<concatitem>' : 'https://web.whatsapp.com/send?text=<concatitem>'
+  }
 ];
 
 export default function EllipsisDropdownSocialNetworkShare ({ messageToShare }: Props) {

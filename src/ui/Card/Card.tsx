@@ -30,7 +30,7 @@ export default function Card ({
         </HeaderTitle>
 
         <EllipsisDropdownSocialNetworkShare
-          messageToShare='Veja isso!!'
+          messageToShare={`Veja isso!! ${window.location.href}`}
         />
       </Header>
 
