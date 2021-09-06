@@ -1,13 +1,17 @@
-import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
+import { useQuery } from '@apollo/client';
+import { ALL_WEALTH_SUMARY } from '@service/queries';
+import { Card } from '@service/ui';
+import { WealthProps } from '@service/utils/wealth';
 
-import { Card } from 'ui';
-import { ALL_WEALTH_SUMARY } from 'service/queries';
-import { WealthProps } from 'utils/wealth';
+import { WealthProps as WealthPropsI } from './service/utils/wealth';
 
 interface DataProps {
   wealthSummary: WealthProps[];
+  ii: WealthPropsI
 }
+
+const i = 'abobora';
 
 function App () {
   const { loading, error, data } = useQuery<DataProps>(ALL_WEALTH_SUMARY);

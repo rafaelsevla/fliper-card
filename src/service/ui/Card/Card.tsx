@@ -1,8 +1,7 @@
+import { DotsLoadingAnimation, EllipsisDropdownSocialNetworkShare } from 'service/ui';
+import { valuesFormater } from 'service/utils/format-values';
+import { WealthProps } from 'service/utils/wealth';
 import styled from 'styled-components';
-
-import { EllipsisDropdownSocialNetworkShare, DotsLoadingAnimation } from 'ui';
-import { WealthProps } from 'utils/wealth';
-import { valuesFormater } from 'utils/format-values';
 
 interface Props extends WealthProps {
   loading: boolean

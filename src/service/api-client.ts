@@ -1,5 +1,5 @@
 
-import { ApolloClient, HttpLink, ApolloLink, InMemoryCache, concat } from '@apollo/client';
+import { ApolloClient, ApolloLink, concat,HttpLink,InMemoryCache } from '@apollo/client';
 
 const httpLink = new HttpLink({ uri: 'https://harura-fliper-test.herokuapp.com/v1/graphql' });
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import deviceIsMobile from 'service/utils/device-is-mobile';
+import interpolateString from 'service/utils/interpolate-string';
 import styled from 'styled-components';
 
 import { ReactComponent as IconEllipsis } from './assets/icon-ellipsis.svg';
-import interpolateString from 'utils/interpolate-string';
-import deviceIsMobile from 'utils/device-is-mobile';
 
 interface Props {
   messageToShare: string;

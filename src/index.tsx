@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import client from 'service/api-client';
 import { ApolloProvider } from '@apollo/client';
 
-import client from 'service/api-client';
-import reportWebVitals from './reportWebVitals';
 import App from './App';
 import GlobalStyle from './global-style';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
